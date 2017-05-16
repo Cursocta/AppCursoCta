@@ -13,10 +13,13 @@ export class HomePage {
   }
 
 
-Foto()
-{
-  console.log("foto");
-   this.navCtrl.push(FotoPage);
+  Foto()
+  {
+    console.log("foto");
+    this.navCtrl.push(FotoPage);
+  }
    
-}
+  aGaleria(){
+    console.log("a Galeria que nos vamos");
+  }
 }

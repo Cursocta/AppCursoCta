@@ -9,13 +9,14 @@ import { HomePage } from '../pages/home/home';
 import { FotoPage } from "../pages/foto/foto";
 import { Camera } from "@ionic-native/camera";
 import { File } from "@ionic-native/file";
-
+import { GaleriaPage } from "../pages/galeria/galeria";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    FotoPage
+    FotoPage,
+    GaleriaPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,8 @@ import { File } from "@ionic-native/file";
   entryComponents: [
     MyApp,
     HomePage,
-    FotoPage
+    FotoPage,
+    GaleriaPage
   ],
   providers: [
     StatusBar,
