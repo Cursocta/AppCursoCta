@@ -11,6 +11,7 @@ import { PictureProvider } from "../providers/picture.provider";
 import { FotoPage } from "../pages/foto/foto";
 import { Camera } from "@ionic-native/camera";
 import { File } from "@ionic-native/file";
+import { SharingProvider } from "../providers/sharing.provider";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { File } from "@ionic-native/file";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PictureProvider,
+    SharingProvider,
     Camera,
     File
   ]
