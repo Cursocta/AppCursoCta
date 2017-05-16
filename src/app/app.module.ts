@@ -12,6 +12,7 @@ import { FotoPage } from "../pages/foto/foto";
 import { Camera } from "@ionic-native/camera";
 import { File } from "@ionic-native/file";
 import { SharingProvider } from "../providers/sharing.provider";
+import { SocialSharing } from "@ionic-native/social-sharing";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { SharingProvider } from "../providers/sharing.provider";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +38,8 @@ import { SharingProvider } from "../providers/sharing.provider";
     PictureProvider,
     SharingProvider,
     Camera,
-    File
+    File,
+    SocialSharing
   ]
 })
 export class AppModule {}
