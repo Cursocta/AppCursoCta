@@ -11,6 +11,7 @@ import { PictureProvider } from "../providers/picture.provider";
 import { FotoPage } from "../pages/foto/foto";
 import { Camera } from "@ionic-native/camera";
 import { File } from "@ionic-native/file";
+import { GaleriaPage } from "../pages/galeria/galeria";
 import { SharingProvider } from "../providers/sharing.provider";
 import { SocialSharing } from "@ionic-native/social-sharing";
 
@@ -18,7 +19,8 @@ import { SocialSharing } from "@ionic-native/social-sharing";
   declarations: [
     MyApp,
     HomePage,
-    FotoPage
+    FotoPage,
+    GaleriaPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { SocialSharing } from "@ionic-native/social-sharing";
   entryComponents: [
     MyApp,
     HomePage,
-    FotoPage
+    FotoPage,
+    GaleriaPage
   ],
   providers: [
     StatusBar,
