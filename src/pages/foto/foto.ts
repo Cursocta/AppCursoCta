@@ -25,7 +25,7 @@ this.camera.getPicture(options).then((imageData) => {
  
     let image:Picture= { id:1,
                           path: this.image,
-                          location: { latitude: "0", longitude: "0"}
+                          coord: { latitude: "0", longitude: "0"}
                         }
 
     provider.createPicture(image).then((resultado)=>

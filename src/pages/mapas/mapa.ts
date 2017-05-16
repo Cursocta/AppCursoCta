@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, Platform, ToastController } from 'ionic-angular';
 import { FotoPage } from "../foto/foto";
-
+import { Geolocation, Geoposition } from '@ionic-native/geolocation';
 import {
  GoogleMaps,
  GoogleMap,
@@ -23,8 +23,8 @@ map: GoogleMap;
 errores:string="";
  google: any;
 
-  constructor(public navCtrl: NavController,public platform: Platform,private googleMaps: GoogleMaps,public toastCtrl: ToastController) {
-  platform.ready().then(() => {
+  constructor(public navCtrl: NavController,public platform: Platform,private googleMaps: GoogleMaps,public toastCtrl: ToastController,public geolocation: Geolocation) {
+  /*platform.ready().then(() => {
             this.mostrarToas("cargando");
             this.loadMap2();
         }
@@ -33,6 +33,7 @@ errores:string="";
         {
           this.mostrarToas("error de plataforma");
         });
+*/
   }
 
 
@@ -162,5 +163,54 @@ mostrarToas2(mensaje) {
  this.errores=this.errores+" " +mensaje;
 }
 
+
+ionViewDidLoad(){
+    this.obtenerPosicion();
+  }
+
+  obtenerPosicion():any{
+    this.geolocation.getCurrentPosition().then(response => {
+      this.loadMapz(response);
+    })
+    .catch(error =>{
+      console.log(error);
+    })
+  }
+
+  loadMapz(postion: Geoposition){
+    let latitude = postion.coords.latitude;
+    let longitud = postion.coords.longitude;
+    console.log(latitude, longitud);
+   
+    // create a new map by passing HTMLElement
+    let element: HTMLElement = document.getElementById('map');
+
+    let map: GoogleMap = this.googleMaps.create(element);
+
+    // create LatLng object
+    let myPosition: LatLng = new LatLng(latitude,longitud);
+
+    // create CameraPosition
+    let position: CameraPosition = {
+      target: myPosition,
+      zoom: 18,
+      tilt: 30
+    };
+
+    map.one(GoogleMapsEvent.MAP_READY).then(()=>{
+      console.log('Map is ready!');
+
+      // move the map's camera to position
+      map.moveCamera(position);
+
+      // create new marker
+      let markerOptions: MarkerOptions = {
+        position: myPosition,
+        title: 'Here'
+      };
+      map.addMarker(markerOptions);
+    });
+
+  }
 
 }

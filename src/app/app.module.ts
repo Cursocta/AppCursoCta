@@ -16,6 +16,8 @@ import { SocialSharing } from "@ionic-native/social-sharing";
 
 import { MapaPage } from '../pages/mapas/mapa';
 import { GoogleMaps } from "@ionic-native/google-maps";
+import { Geolocation, Geoposition } from '@ionic-native/geolocation';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +46,8 @@ import { GoogleMaps } from "@ionic-native/google-maps";
     Camera,
     File,
     GoogleMaps,
-    SocialSharing
+    SocialSharing,
+    Geolocation
   ]
 })
 export class AppModule {}
