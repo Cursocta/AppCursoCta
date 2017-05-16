@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FotoPage } from "../foto/foto";
+import { GaleriaPage } from "../galeria/galeria";
 
 @Component({
   selector: 'page-home',
@@ -20,6 +21,7 @@ export class HomePage {
   }
    
   aGaleria(){
+    this.navCtrl.push(GaleriaPage)
     console.log("a Galeria que nos vamos");
   }
 }

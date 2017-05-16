@@ -13,7 +13,7 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'galeria.html',
 })
 export class GaleriaPage {
-  Foto: any;
+  Foto: any[];
   private title: string;
 
 
@@ -22,7 +22,8 @@ export class GaleriaPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GaleriaPage');
-    this.title = "galería"
+    this.title = "galería";
+    this.Foto = [1,2];
   }
 
 }
