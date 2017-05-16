@@ -11,6 +11,8 @@ import { PictureProvider } from "../providers/picture.provider";
 import { FotoPage } from "../pages/foto/foto";
 import { Camera } from "@ionic-native/camera";
 import { File } from "@ionic-native/file";
+import { SharingProvider } from "../providers/sharing.provider";
+import { SocialSharing } from "@ionic-native/social-sharing";
 
 import { MapaPage } from '../pages/mapas/mapa';
 import { GoogleMaps } from "@ionic-native/google-maps";
@@ -24,7 +26,7 @@ import { GoogleMaps } from "@ionic-native/google-maps";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,10 +40,11 @@ import { GoogleMaps } from "@ionic-native/google-maps";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PictureProvider,
+    SharingProvider,
     Camera,
     File,
-    GoogleMaps
-    
+    GoogleMaps,
+    SocialSharing
   ]
 })
 export class AppModule {}
