@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FotoPage } from "../foto/foto";
+import { MapaPage } from "../mapas/mapa";
 
 @Component({
   selector: 'page-home',
@@ -17,6 +18,13 @@ Foto()
 {
   console.log("foto");
    this.navCtrl.push(FotoPage);
+   
+}
+
+Mapa()
+{
+  console.log("mapa");
+   this.navCtrl.push(MapaPage);
    
 }
 }
