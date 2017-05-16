@@ -14,14 +14,10 @@
 
 
 <ion-content padding>
-    <ion-slides pager *ngFor="let foto of fotos">
-
+    <ion-slides pager *ngFor="let Foto of Fotos">
         <ion-slide style="background-color: green">
-            <h2>tituloFoto</h2>
-            <!-- <img [src]="#"> -->
+            <h2>{{Foto.id}}</h2>
+            <img [src]="Foto.path" />
         </ion-slide>
-
-
-
     </ion-slides>
 </ion-content>

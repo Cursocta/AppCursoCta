@@ -2,7 +2,7 @@ page-home {
     ion-content {
         @include linear-gradient($lg_blue_From, $lg_blue_To);
         button {
-            background-color: white;
+            background-color: $rojo !important;
         }
     }
 }

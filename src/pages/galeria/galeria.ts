@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { PictureProvider } from "../../providers/picture.provider";
+import { Picture } from "../../types/picture";
+
 
 
 /**
@@ -13,17 +16,20 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'galeria.html',
 })
 export class GaleriaPage {
-  Foto: any[];
+  Fotos: Picture[];
   private title: string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public pictureProvider:PictureProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GaleriaPage');
     this.title = "galería";
-    this.Foto = [1,2];
+    this.pictureProvider.listPictures()
+    .then((pictures)=>{
+      this.Fotos = pictures;})
+;
   }
 
 }
