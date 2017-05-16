@@ -12,6 +12,8 @@ import { FotoPage } from "../pages/foto/foto";
 import { Camera } from "@ionic-native/camera";
 import { File } from "@ionic-native/file";
 import { GaleriaPage } from "../pages/galeria/galeria";
+import { SharingProvider } from "../providers/sharing.provider";
+import { SocialSharing } from "@ionic-native/social-sharing";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { GaleriaPage } from "../pages/galeria/galeria";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,8 +39,10 @@ import { GaleriaPage } from "../pages/galeria/galeria";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PictureProvider,
+    SharingProvider,
     Camera,
-    File
+    File,
+    SocialSharing
   ]
 })
 export class AppModule {}
