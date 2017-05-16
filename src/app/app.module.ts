@@ -11,6 +11,8 @@ import { PictureProvider } from "../providers/picture.provider";
 import { FotoPage } from "../pages/foto/foto";
 import { Camera } from "@ionic-native/camera";
 import { File } from "@ionic-native/file";
+import { SharingProvider } from "../providers/sharing.provider";
+import { SocialSharing } from "@ionic-native/social-sharing";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { File } from "@ionic-native/file";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,8 +36,10 @@ import { File } from "@ionic-native/file";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PictureProvider,
+    SharingProvider,
     Camera,
-    File
+    File,
+    SocialSharing
   ]
 })
 export class AppModule {}
