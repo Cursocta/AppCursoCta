@@ -11,6 +11,7 @@ import { PictureProvider } from "../providers/picture.provider";
 import { FotoPage } from "../pages/foto/foto";
 import { Camera } from "@ionic-native/camera";
 import { File } from "@ionic-native/file";
+import { GaleriaPage } from "../pages/galeria/galeria";
 import { SharingProvider } from "../providers/sharing.provider";
 import { SocialSharing } from "@ionic-native/social-sharing";
 
@@ -23,7 +24,8 @@ import { Geolocation, Geoposition } from '@ionic-native/geolocation';
     MyApp,
     HomePage,
     FotoPage,
-    MapaPage
+    MapaPage,
+    GaleriaPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { Geolocation, Geoposition } from '@ionic-native/geolocation';
     MyApp,
     HomePage,
     FotoPage,
-    MapaPage
+    MapaPage,
+    GaleriaPage
   ],
   providers: [
     StatusBar,

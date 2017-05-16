@@ -1,8 +1,5 @@
-page-home {
+page-galeria {
     ion-content {
         @include linear-gradient($lg_blue_From, $lg_blue_To);
-        button {
-            background-color: $rojo !important;
-        }
     }
 }
