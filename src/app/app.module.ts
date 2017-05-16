@@ -8,11 +8,15 @@ import { Storage, IonicStorageModule } from "@ionic/storage"
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PictureProvider } from "../providers/picture.provider";
+import { FotoPage } from "../pages/foto/foto";
+import { Camera } from "@ionic-native/camera";
+import { File } from "@ionic-native/file";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    FotoPage
   ],
   imports: [
     BrowserModule,
@@ -22,13 +26,16 @@ import { PictureProvider } from "../providers/picture.provider";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    FotoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PictureProvider,
+    Camera,
+    File
   ]
 })
 export class AppModule {}
