@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PictureProvider } from "../../providers/picture.provider";
 import { Picture } from "../../types/picture";
+import { SharingProvider } from "../../providers/sharing.provider";
 
 
 
@@ -20,8 +21,12 @@ export class GaleriaPage {
   private title: string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public pictureProvider:PictureProvider) {
-  }
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public pictureProvider:PictureProvider,
+    public sharingProvider: SharingProvider
+  ) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GaleriaPage');
@@ -30,6 +35,10 @@ export class GaleriaPage {
     .then((pictures)=>{
       this.Fotos = pictures;})
 ;
+  }
+
+  sharePicture(picture: Picture) {
+    this.sharingProvider.share(picture);
   }
 
 }

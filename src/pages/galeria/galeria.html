@@ -14,10 +14,11 @@
 
 
 <ion-content padding>
-    <ion-slides pager *ngFor="let Foto of Fotos">
-        <ion-slide style="background-color: green">
-            <h2>{{Foto.id}}</h2>
+    <ion-slides pager>
+        <ion-slide *ngFor="let Foto of Fotos">
+            <h2>{{Foto.id | date: 'short'}}</h2>
             <img [src]="Foto.path" />
+            <button ion-button icon-only><ion-icon name="share"></ion-icon></button>
         </ion-slide>
     </ion-slides>
 </ion-content>

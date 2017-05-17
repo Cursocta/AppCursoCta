@@ -1,8 +1,8 @@
 page-home {
     ion-content {
         @include linear-gradient($lg_blue_From, $lg_blue_To);
-        button {
-            background-color: $rojo !important;
+        .button-md {
+            background-color: $rojo;
         }
     }
 }
